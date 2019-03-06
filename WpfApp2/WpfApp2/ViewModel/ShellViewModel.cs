@@ -18,7 +18,7 @@ namespace WpfApp2.ViewModel
 
         public ShellViewModel()
         {
-            Console.WriteLine("With the default new line characters:");
+            Console.WriteLine("With");
             DataAccess da = new DataAccess();
             People = new ObservableCollection<PersonModel>(da.GetPeople());
             Console.WriteLine(People.Count);

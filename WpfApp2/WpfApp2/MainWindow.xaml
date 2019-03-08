@@ -6,12 +6,22 @@
         xmlns:local="clr-namespace:WpfApp2"
         xmlns:viewModel = "clr-namespace:WpfApp2.ViewModel"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="350" Width="750">
 
-    <Window.DataContext>
+    <!--<Window.DataContext>
         <viewModel:ShellViewModel/>
-    </Window.DataContext>
-    <Grid>
+    </Window.DataContext>-->
+    <Window.Resources>
+        <viewModel:ShellViewModel x:Key="fp"></viewModel:ShellViewModel>
+    </Window.Resources>
+    <Grid DataContext="{StaticResource fp}">
+        <!--<TextBox HorizontalAlignment="Left" Height="23" Margin="75,38,0,0" TextWrapping="Wrap" Text="{Binding FirstName}" VerticalAlignment="Top" Width="120"/>-->
+        <!--<TextBox HorizontalAlignment="Left" Height="23" Margin="75,79,0,0" TextWrapping="Wrap" Text="{Binding LastName}" VerticalAlignment="Top" Width="120"/>-->
+        <!--<Button Content="Add" HorizontalAlignment="Left" Margin="104,118,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.093,1.636" Command="{Binding acomm}" />-->
+        <DataGrid HorizontalAlignment="Left" Name="mydatagrid" VerticalAlignment="Top" Height="350" Width="750" ItemsSource="{Binding Path=People,Mode=TwoWay,NotifyOnSourceUpdated=True,NotifyOnTargetUpdated=True}"/>
+
+    </Grid>
+    <!--<Grid DataContext="{StaticResource fp}">
         <Grid.RowDefinitions>
             <RowDefinition Height="auto" />
             <RowDefinition Height="auto" />
@@ -24,7 +34,7 @@
                   AutoGenerateColumns="False">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Full Name" Binding="{Binding Path=FullName}" />
-                <!--<DataGridCheckBoxColumn Header="Is Alive" Binding="{Binding Path=IsAlive}" />-->
+                --><!--<DataGridCheckBoxColumn Header="Is Alive" Binding="{Binding Path=IsAlive}" />-->
                 <!--<DataGridTemplateColumn Header="Primary Address">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
@@ -54,8 +64,8 @@
                             <DatePicker SelectedDate="{Binding Path=DateOfBirth}" />
                         </DataTemplate>
                     </DataGridTemplateColumn.CellEditingTemplate>
-                </DataGridTemplateColumn>-->
+                </DataGridTemplateColumn>--><!--
             </DataGrid.Columns>
         </DataGrid>
-    </Grid>
+    </Grid>-->
 </Window>

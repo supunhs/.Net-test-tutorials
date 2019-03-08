@@ -20,7 +20,7 @@ namespace WpfApp2.ViewModel
         {
             Console.WriteLine("With");
             DataAccess da = new DataAccess();
-            People = new ObservableCollection<PersonModel>(da.GetPeople());
+            People= new ObservableCollection<PersonModel>(da.GetPeople());
             Console.WriteLine(People.Count);
             foreach (var item in People)
             {
